@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puro Amor 🩷</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+</head>
+<body>
+    <header>
+        <div id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <img src="/images/logo2.png">
+    </header>
+
+    <nav id="sideMenu" class="hidden">
+        <button id="closeMenu">&times;</button>
+        <a href="#" class="menuItem">Home</a>
+        <a href="#" id="contactButton" class="menuItem">Contacto</a>
+        <a href="/sobre_nos" class="menuItem">Sobre Nosotros</a>
+        <button id="cartButton" class="menuItem">Carrito (<span id="cartCount">0</span>)</button>
+    </nav>
+
+    <main>
+        <% products.forEach(product => { %>
+            <section class="product">
+                <img src="<%= product.image_url %>" alt="<%= product.name %>">
+                <h2><%= product.name %></h2>
+                <p>Price: $<%= product.price %></p>
+                <button class="add-to-cart" data-product-id="<%= product.id %>">Añadir al carro</button>
+            </section>
+        <% }); %>
+    </main>
+
+
+        <!-- Tarjeta de Contacto -->
+    <div id="contactCard" class="hidden">
+        <button id="closeContactCard">&times;</button>
+        <ul>
+            <li><a href="https://wa.me/5492645250735?" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                WhatsApp
+            </a></li>
+            <li><a href="mailto:puroamorsj@gmail.com">
+                <i class="fa-regular fa-envelope"></i>
+                Correo
+            </a></li>
+            <li><a href="https://www.instagram.com/puroamor_hechoamano/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a></li>
+        </ul>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
